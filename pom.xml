@@ -8,6 +8,7 @@
     <artifactId>amazon-sp-api</artifactId>
     <version>0.0.1-beta</version>
     <name>amazon-sp-api</name>
+    <description>amazon-sp-api sdk</description>
     <url>https://github.com/vitahlin/amazon-sp-api</url>
 
     <licenses>
@@ -188,6 +189,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <keyname>maven</keyname>
+                </configuration>
             </plugin>
         </plugins>
     </build>
