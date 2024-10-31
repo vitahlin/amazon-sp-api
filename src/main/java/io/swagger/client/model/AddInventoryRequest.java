@@ -22,33 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.InventoryItems;
 import java.io.IOException;
 
 /**
- * The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It&#39;s a form of traffic management.
+ * The object with the list of Inventory to be added
  */
-@ApiModel(description = "The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It's a form of traffic management.")
+@ApiModel(description = "The object with the list of Inventory to be added")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:51:37.362+08:00")
-public class Pagination {
-  @SerializedName("nextToken")
-  private String nextToken = null;
+public class AddInventoryRequest {
+  @SerializedName("inventoryItems")
+  private InventoryItems inventoryItems = null;
 
-  public Pagination nextToken(String nextToken) {
-    this.nextToken = nextToken;
+  public AddInventoryRequest inventoryItems(InventoryItems inventoryItems) {
+    this.inventoryItems = inventoryItems;
     return this;
   }
 
    /**
-   * A generated string used to retrieve the next page of the result. If nextToken is returned, pass the value of nextToken to the next request. If nextToken is not returned, there are no more items to return.
-   * @return nextToken
+   * Get inventoryItems
+   * @return inventoryItems
   **/
-  @ApiModelProperty(value = "A generated string used to retrieve the next page of the result. If nextToken is returned, pass the value of nextToken to the next request. If nextToken is not returned, there are no more items to return.")
-  public String getNextToken() {
-    return nextToken;
+  @ApiModelProperty(value = "")
+  public InventoryItems getInventoryItems() {
+    return inventoryItems;
   }
 
-  public void setNextToken(String nextToken) {
-    this.nextToken = nextToken;
+  public void setInventoryItems(InventoryItems inventoryItems) {
+    this.inventoryItems = inventoryItems;
   }
 
 
@@ -60,22 +61,22 @@ public class Pagination {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Pagination pagination = (Pagination) o;
-    return Objects.equals(this.nextToken, pagination.nextToken);
+    AddInventoryRequest addInventoryRequest = (AddInventoryRequest) o;
+    return Objects.equals(this.inventoryItems, addInventoryRequest.inventoryItems);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nextToken);
+    return Objects.hash(inventoryItems);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Pagination {\n");
+    sb.append("class AddInventoryRequest {\n");
     
-    sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
+    sb.append("    inventoryItems: ").append(toIndentedString(inventoryItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,33 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ErrorList;
 import java.io.IOException;
 
 /**
- * The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It&#39;s a form of traffic management.
+ * The response schema for the AddInventory operation.
  */
-@ApiModel(description = "The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It's a form of traffic management.")
+@ApiModel(description = "The response schema for the AddInventory operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:51:37.362+08:00")
-public class Pagination {
-  @SerializedName("nextToken")
-  private String nextToken = null;
+public class AddInventoryResponse {
+  @SerializedName("errors")
+  private ErrorList errors = null;
 
-  public Pagination nextToken(String nextToken) {
-    this.nextToken = nextToken;
+  public AddInventoryResponse errors(ErrorList errors) {
+    this.errors = errors;
     return this;
   }
 
    /**
-   * A generated string used to retrieve the next page of the result. If nextToken is returned, pass the value of nextToken to the next request. If nextToken is not returned, there are no more items to return.
-   * @return nextToken
+   * One or more unexpected errors occurred during the AddInventory operation.
+   * @return errors
   **/
-  @ApiModelProperty(value = "A generated string used to retrieve the next page of the result. If nextToken is returned, pass the value of nextToken to the next request. If nextToken is not returned, there are no more items to return.")
-  public String getNextToken() {
-    return nextToken;
+  @ApiModelProperty(value = "One or more unexpected errors occurred during the AddInventory operation.")
+  public ErrorList getErrors() {
+    return errors;
   }
 
-  public void setNextToken(String nextToken) {
-    this.nextToken = nextToken;
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
   }
 
 
@@ -60,22 +61,22 @@ public class Pagination {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Pagination pagination = (Pagination) o;
-    return Objects.equals(this.nextToken, pagination.nextToken);
+    AddInventoryResponse addInventoryResponse = (AddInventoryResponse) o;
+    return Objects.equals(this.errors, addInventoryResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nextToken);
+    return Objects.hash(errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Pagination {\n");
+    sb.append("class AddInventoryResponse {\n");
     
-    sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
