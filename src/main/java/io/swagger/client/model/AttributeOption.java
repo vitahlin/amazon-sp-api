@@ -22,41 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses that are returned when a request is unsuccessful.
+ * The definition of the attribute option.
  */
-@ApiModel(description = "A list of error responses that are returned when a request is unsuccessful.")
+@ApiModel(description = "The definition of the attribute option.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:01:45.889+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class AttributeOption {
+  @SerializedName("description")
+  private String description = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("value")
+  private String value = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public AttributeOption description(String description) {
+    this.description = description;
     return this;
   }
 
    /**
-   * List of errors.
-   * @return errors
+   * The description of the attribute value.
+   * @return description
   **/
-  @ApiModelProperty(required = true, value = "List of errors.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "The description of the attribute value.")
+  public String getDescription() {
+    return description;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public AttributeOption value(String value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * The possible values for the attribute option.
+   * @return value
+  **/
+  @ApiModelProperty(value = "The possible values for the attribute option.")
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(String value) {
+    this.value = value;
   }
 
 
@@ -68,22 +81,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    AttributeOption attributeOption = (AttributeOption) o;
+    return Objects.equals(this.description, attributeOption.description) &&
+        Objects.equals(this.value, attributeOption.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(description, value);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class AttributeOption {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

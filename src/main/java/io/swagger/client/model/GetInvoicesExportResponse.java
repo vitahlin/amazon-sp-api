@@ -22,41 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
+import io.swagger.client.model.Export;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses that are returned when a request is unsuccessful.
+ * Success.
  */
-@ApiModel(description = "A list of error responses that are returned when a request is unsuccessful.")
+@ApiModel(description = "Success.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:01:45.889+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class GetInvoicesExportResponse {
+  @SerializedName("export")
+  private Export export = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public GetInvoicesExportResponse export(Export export) {
+    this.export = export;
     return this;
   }
 
    /**
-   * List of errors.
-   * @return errors
+   * Get export
+   * @return export
   **/
-  @ApiModelProperty(required = true, value = "List of errors.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "")
+  public Export getExport() {
+    return export;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setExport(Export export) {
+    this.export = export;
   }
 
 
@@ -68,22 +61,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    GetInvoicesExportResponse getInvoicesExportResponse = (GetInvoicesExportResponse) o;
+    return Objects.equals(this.export, getInvoicesExportResponse.export);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(export);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class GetInvoicesExportResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    export: ").append(toIndentedString(export)).append("\n");
     sb.append("}");
     return sb.toString();
   }

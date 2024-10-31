@@ -1,10 +1,10 @@
 
-# ErrorList
+# ExportInvoicesResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**List&lt;Error&gt;**](Error.md) | List of errors. | 
+**exportId** | **String** | The export identifier. |  [optional]
 
 
 

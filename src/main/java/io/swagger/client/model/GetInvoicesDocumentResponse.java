@@ -22,41 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
+import io.swagger.client.model.InvoicesDocument;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses that are returned when a request is unsuccessful.
+ * Success.
  */
-@ApiModel(description = "A list of error responses that are returned when a request is unsuccessful.")
+@ApiModel(description = "Success.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:01:45.889+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class GetInvoicesDocumentResponse {
+  @SerializedName("invoicesDocument")
+  private InvoicesDocument invoicesDocument = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public GetInvoicesDocumentResponse invoicesDocument(InvoicesDocument invoicesDocument) {
+    this.invoicesDocument = invoicesDocument;
     return this;
   }
 
    /**
-   * List of errors.
-   * @return errors
+   * Get invoicesDocument
+   * @return invoicesDocument
   **/
-  @ApiModelProperty(required = true, value = "List of errors.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "")
+  public InvoicesDocument getInvoicesDocument() {
+    return invoicesDocument;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setInvoicesDocument(InvoicesDocument invoicesDocument) {
+    this.invoicesDocument = invoicesDocument;
   }
 
 
@@ -68,22 +61,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    GetInvoicesDocumentResponse getInvoicesDocumentResponse = (GetInvoicesDocumentResponse) o;
+    return Objects.equals(this.invoicesDocument, getInvoicesDocumentResponse.invoicesDocument);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(invoicesDocument);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class GetInvoicesDocumentResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    invoicesDocument: ").append(toIndentedString(invoicesDocument)).append("\n");
     sb.append("}");
     return sb.toString();
   }

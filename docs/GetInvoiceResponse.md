@@ -1,10 +1,10 @@
 
-# ErrorList
+# GetInvoiceResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**List&lt;Error&gt;**](Error.md) | List of errors. | 
+**invoice** | [**Invoice**](Invoice.md) |  |  [optional]
 
 
 

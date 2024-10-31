@@ -22,41 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses that are returned when a request is unsuccessful.
+ * The identifier for a transaction.
  */
-@ApiModel(description = "A list of error responses that are returned when a request is unsuccessful.")
+@ApiModel(description = "The identifier for a transaction.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:01:45.889+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class TransactionIdentifier {
+  @SerializedName("name")
+  private String name = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("id")
+  private String id = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public TransactionIdentifier name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * List of errors.
-   * @return errors
+   * The transaction identifier name. Use the &#x60;getInvoicesAttributes&#x60; operation to check &#x60;transactionIdentifierName&#x60; options.
+   * @return name
   **/
-  @ApiModelProperty(required = true, value = "List of errors.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "The transaction identifier name. Use the `getInvoicesAttributes` operation to check `transactionIdentifierName` options.")
+  public String getName() {
+    return name;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public TransactionIdentifier id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The transaction identifier.
+   * @return id
+  **/
+  @ApiModelProperty(value = "The transaction identifier.")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -68,22 +81,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    TransactionIdentifier transactionIdentifier = (TransactionIdentifier) o;
+    return Objects.equals(this.name, transactionIdentifier.name) &&
+        Objects.equals(this.id, transactionIdentifier.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(name, id);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class TransactionIdentifier {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
