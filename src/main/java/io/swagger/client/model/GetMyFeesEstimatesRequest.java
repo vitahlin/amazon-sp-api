@@ -16,16 +16,16 @@ package io.swagger.client.model;
 import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
-import io.swagger.client.model.Error;
+import io.swagger.client.model.FeesEstimateByIdRequest;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * Request for estimated fees for a list of products.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "Request for estimated fees for a list of products.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:07:50.592+08:00")
-public class ErrorList extends ArrayList<Error> {
+public class GetMyFeesEstimatesRequest extends ArrayList<FeesEstimateByIdRequest> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -47,7 +47,7 @@ public class ErrorList extends ArrayList<Error> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class GetMyFeesEstimatesRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

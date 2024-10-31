@@ -15,8 +15,15 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Error;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +32,33 @@ import java.util.List;
  */
 @ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:07:50.592+08:00")
-public class ErrorList extends ArrayList<Error> {
+public class GetMyFeesEstimatesErrorList {
+  @SerializedName("errors")
+  private List<Error> errors = new ArrayList<Error>();
+
+  public GetMyFeesEstimatesErrorList errors(List<Error> errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  public GetMyFeesEstimatesErrorList addErrorsItem(Error errorsItem) {
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<Error> getErrors() {
+    return errors;
+  }
+
+  public void setErrors(List<Error> errors) {
+    this.errors = errors;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -35,20 +68,22 @@ public class ErrorList extends ArrayList<Error> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    GetMyFeesEstimatesErrorList getMyFeesEstimatesErrorList = (GetMyFeesEstimatesErrorList) o;
+    return Objects.equals(this.errors, getMyFeesEstimatesErrorList.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class GetMyFeesEstimatesErrorList {\n");
+    
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

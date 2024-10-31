@@ -22,54 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.MoneyType;
+import io.swagger.client.model.FeesEstimateRequest;
 import java.io.IOException;
 
 /**
- * Points
+ * Request schema.
  */
+@ApiModel(description = "Request schema.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:07:50.592+08:00")
-public class Points {
-  @SerializedName("PointsNumber")
-  private Integer pointsNumber = null;
+public class GetMyFeesEstimateRequest {
+  @SerializedName("FeesEstimateRequest")
+  private FeesEstimateRequest feesEstimateRequest = null;
 
-  @SerializedName("PointsMonetaryValue")
-  private MoneyType pointsMonetaryValue = null;
-
-  public Points pointsNumber(Integer pointsNumber) {
-    this.pointsNumber = pointsNumber;
+  public GetMyFeesEstimateRequest feesEstimateRequest(FeesEstimateRequest feesEstimateRequest) {
+    this.feesEstimateRequest = feesEstimateRequest;
     return this;
   }
 
    /**
-   * Get pointsNumber
-   * @return pointsNumber
+   * Get feesEstimateRequest
+   * @return feesEstimateRequest
   **/
   @ApiModelProperty(value = "")
-  public Integer getPointsNumber() {
-    return pointsNumber;
+  public FeesEstimateRequest getFeesEstimateRequest() {
+    return feesEstimateRequest;
   }
 
-  public void setPointsNumber(Integer pointsNumber) {
-    this.pointsNumber = pointsNumber;
-  }
-
-  public Points pointsMonetaryValue(MoneyType pointsMonetaryValue) {
-    this.pointsMonetaryValue = pointsMonetaryValue;
-    return this;
-  }
-
-   /**
-   * Get pointsMonetaryValue
-   * @return pointsMonetaryValue
-  **/
-  @ApiModelProperty(value = "")
-  public MoneyType getPointsMonetaryValue() {
-    return pointsMonetaryValue;
-  }
-
-  public void setPointsMonetaryValue(MoneyType pointsMonetaryValue) {
-    this.pointsMonetaryValue = pointsMonetaryValue;
+  public void setFeesEstimateRequest(FeesEstimateRequest feesEstimateRequest) {
+    this.feesEstimateRequest = feesEstimateRequest;
   }
 
 
@@ -81,24 +61,22 @@ public class Points {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Points points = (Points) o;
-    return Objects.equals(this.pointsNumber, points.pointsNumber) &&
-        Objects.equals(this.pointsMonetaryValue, points.pointsMonetaryValue);
+    GetMyFeesEstimateRequest getMyFeesEstimateRequest = (GetMyFeesEstimateRequest) o;
+    return Objects.equals(this.feesEstimateRequest, getMyFeesEstimateRequest.feesEstimateRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pointsNumber, pointsMonetaryValue);
+    return Objects.hash(feesEstimateRequest);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Points {\n");
+    sb.append("class GetMyFeesEstimateRequest {\n");
     
-    sb.append("    pointsNumber: ").append(toIndentedString(pointsNumber)).append("\n");
-    sb.append("    pointsMonetaryValue: ").append(toIndentedString(pointsMonetaryValue)).append("\n");
+    sb.append("    feesEstimateRequest: ").append(toIndentedString(feesEstimateRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

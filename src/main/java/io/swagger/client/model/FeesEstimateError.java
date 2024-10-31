@@ -22,23 +22,46 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.FeesEstimateErrorDetail;
 import java.io.IOException;
 
 /**
- * Error
+ * An unexpected error occurred during this operation.
  */
+@ApiModel(description = "An unexpected error occurred during this operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:07:50.592+08:00")
-public class Error {
-  @SerializedName("code")
+public class FeesEstimateError {
+  @SerializedName("Type")
+  private String type = null;
+
+  @SerializedName("Code")
   private String code = null;
 
-  @SerializedName("message")
+  @SerializedName("Message")
   private String message = null;
 
-  @SerializedName("details")
-  private String details = null;
+  @SerializedName("Detail")
+  private FeesEstimateErrorDetail detail = null;
 
-  public Error code(String code) {
+  public FeesEstimateError type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * An error type, identifying either the receiver or the sender as the originator of the error.
+   * @return type
+  **/
+  @ApiModelProperty(required = true, value = "An error type, identifying either the receiver or the sender as the originator of the error.")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public FeesEstimateError code(String code) {
     this.code = code;
     return this;
   }
@@ -56,7 +79,7 @@ public class Error {
     this.code = code;
   }
 
-  public Error message(String message) {
+  public FeesEstimateError message(String message) {
     this.message = message;
     return this;
   }
@@ -74,22 +97,22 @@ public class Error {
     this.message = message;
   }
 
-  public Error details(String details) {
-    this.details = details;
+  public FeesEstimateError detail(FeesEstimateErrorDetail detail) {
+    this.detail = detail;
     return this;
   }
 
    /**
-   * Additional details that can help the caller understand or fix the issue.
-   * @return details
+   * Get detail
+   * @return detail
   **/
-  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
-  public String getDetails() {
-    return details;
+  @ApiModelProperty(required = true, value = "")
+  public FeesEstimateErrorDetail getDetail() {
+    return detail;
   }
 
-  public void setDetails(String details) {
-    this.details = details;
+  public void setDetail(FeesEstimateErrorDetail detail) {
+    this.detail = detail;
   }
 
 
@@ -101,26 +124,28 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.code, error.code) &&
-        Objects.equals(this.message, error.message) &&
-        Objects.equals(this.details, error.details);
+    FeesEstimateError feesEstimateError = (FeesEstimateError) o;
+    return Objects.equals(this.type, feesEstimateError.type) &&
+        Objects.equals(this.code, feesEstimateError.code) &&
+        Objects.equals(this.message, feesEstimateError.message) &&
+        Objects.equals(this.detail, feesEstimateError.detail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, details);
+    return Objects.hash(type, code, message, detail);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class FeesEstimateError {\n");
     
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
     sb.append("}");
     return sb.toString();
   }
