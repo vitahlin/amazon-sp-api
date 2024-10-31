@@ -22,41 +22,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * The response for the &#x60;createNotification&#x60; operation.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "The response for the `createNotification` operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:41:31.349+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class CreateNotificationResponse {
+  @SerializedName("notificationId")
+  private String notificationId = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public CreateNotificationResponse notificationId(String notificationId) {
+    this.notificationId = notificationId;
     return this;
   }
 
    /**
-   * Error response returned when the request is unsuccessful.
-   * @return errors
+   * The unique identifier assigned to each notification.
+   * @return notificationId
   **/
-  @ApiModelProperty(required = true, value = "Error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "The unique identifier assigned to each notification.")
+  public String getNotificationId() {
+    return notificationId;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setNotificationId(String notificationId) {
+    this.notificationId = notificationId;
   }
 
 
@@ -68,22 +60,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    CreateNotificationResponse createNotificationResponse = (CreateNotificationResponse) o;
+    return Objects.equals(this.notificationId, createNotificationResponse.notificationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(notificationId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class CreateNotificationResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    notificationId: ").append(toIndentedString(notificationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
