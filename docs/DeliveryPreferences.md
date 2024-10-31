@@ -4,8 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deliveryInstructions** | **String** | Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, &#39;Beware of dogs&#39;, etc. |  [optional]
-**dropOffLocation** | [**DropOffLocation**](DropOffLocation.md) | The preferred location to leave packages at the destination address. |  [optional]
+**dropOffLocation** | **String** | Drop-off location selected by the customer. |  [optional]
+**preferredDeliveryTime** | [**PreferredDeliveryTime**](PreferredDeliveryTime.md) | Business hours and days when the delivery is preferred. |  [optional]
+**otherAttributes** | [**List&lt;OtherDeliveryAttributes&gt;**](OtherDeliveryAttributes.md) | Enumerated list of miscellaneous delivery attributes associated with the shipping address. |  [optional]
+**addressInstructions** | **String** | Building instructions, nearby landmark or navigation instructions. |  [optional]
 
 
 

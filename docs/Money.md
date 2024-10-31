@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currencyCode** | **String** | Three-digit currency code in ISO 4217 format. | 
-**amount** | **String** | The currency amount. | 
+**currencyCode** | **String** | The three-digit currency code. In ISO 4217 format. |  [optional]
+**amount** | **String** | The currency amount. |  [optional]
 
 
 

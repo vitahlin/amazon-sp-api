@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Merchant Fulfillment
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * Selling Partner API for Orders
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -22,16 +22,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.AddressExtendedFields;
 import java.io.IOException;
 
 /**
- * The postal address information.
+ * The shipping address for the order.
  */
-@ApiModel(description = "The postal address information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:04:39.755+08:00")
+@ApiModel(description = "The shipping address for the order.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:07:17.661+08:00")
 public class Address {
   @SerializedName("Name")
   private String name = null;
+
+  @SerializedName("CompanyName")
+  private String companyName = null;
 
   @SerializedName("AddressLine1")
   private String addressLine1 = null;
@@ -42,17 +46,20 @@ public class Address {
   @SerializedName("AddressLine3")
   private String addressLine3 = null;
 
-  @SerializedName("DistrictOrCounty")
-  private String districtOrCounty = null;
-
-  @SerializedName("Email")
-  private String email = null;
-
   @SerializedName("City")
   private String city = null;
 
-  @SerializedName("StateOrProvinceCode")
-  private String stateOrProvinceCode = null;
+  @SerializedName("County")
+  private String county = null;
+
+  @SerializedName("District")
+  private String district = null;
+
+  @SerializedName("StateOrRegion")
+  private String stateOrRegion = null;
+
+  @SerializedName("Municipality")
+  private String municipality = null;
 
   @SerializedName("PostalCode")
   private String postalCode = null;
@@ -63,16 +70,69 @@ public class Address {
   @SerializedName("Phone")
   private String phone = null;
 
+  @SerializedName("ExtendedFields")
+  private AddressExtendedFields extendedFields = null;
+
+  /**
+   * The address type of the shipping address.
+   */
+  @JsonAdapter(AddressTypeEnum.Adapter.class)
+  public enum AddressTypeEnum {
+    RESIDENTIAL("Residential"),
+    
+    COMMERCIAL("Commercial");
+
+    private String value;
+
+    AddressTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AddressTypeEnum fromValue(String text) {
+      for (AddressTypeEnum b : AddressTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AddressTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AddressTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AddressTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return AddressTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("AddressType")
+  private AddressTypeEnum addressType = null;
+
   public Address name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * Get name
+   * The name.
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The name.")
   public String getName() {
     return name;
   }
@@ -81,16 +141,34 @@ public class Address {
     this.name = name;
   }
 
+  public Address companyName(String companyName) {
+    this.companyName = companyName;
+    return this;
+  }
+
+   /**
+   * The company name of the recipient.  **Note**: This attribute is only available for shipping address.
+   * @return companyName
+  **/
+  @ApiModelProperty(value = "The company name of the recipient.  **Note**: This attribute is only available for shipping address.")
+  public String getCompanyName() {
+    return companyName;
+  }
+
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
+
   public Address addressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
 
    /**
-   * Get addressLine1
+   * The street address.
    * @return addressLine1
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "The street address.")
   public String getAddressLine1() {
     return addressLine1;
   }
@@ -105,10 +183,10 @@ public class Address {
   }
 
    /**
-   * Get addressLine2
+   * Additional street address information, if required.
    * @return addressLine2
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Additional street address information, if required.")
   public String getAddressLine2() {
     return addressLine2;
   }
@@ -123,10 +201,10 @@ public class Address {
   }
 
    /**
-   * Get addressLine3
+   * Additional street address information, if required.
    * @return addressLine3
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Additional street address information, if required.")
   public String getAddressLine3() {
     return addressLine3;
   }
@@ -135,52 +213,16 @@ public class Address {
     this.addressLine3 = addressLine3;
   }
 
-  public Address districtOrCounty(String districtOrCounty) {
-    this.districtOrCounty = districtOrCounty;
-    return this;
-  }
-
-   /**
-   * Get districtOrCounty
-   * @return districtOrCounty
-  **/
-  @ApiModelProperty(value = "")
-  public String getDistrictOrCounty() {
-    return districtOrCounty;
-  }
-
-  public void setDistrictOrCounty(String districtOrCounty) {
-    this.districtOrCounty = districtOrCounty;
-  }
-
-  public Address email(String email) {
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Get email
-   * @return email
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
   public Address city(String city) {
     this.city = city;
     return this;
   }
 
    /**
-   * Get city
+   * The city.
    * @return city
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "The city.")
   public String getCity() {
     return city;
   }
@@ -189,22 +231,76 @@ public class Address {
     this.city = city;
   }
 
-  public Address stateOrProvinceCode(String stateOrProvinceCode) {
-    this.stateOrProvinceCode = stateOrProvinceCode;
+  public Address county(String county) {
+    this.county = county;
     return this;
   }
 
    /**
-   * Get stateOrProvinceCode
-   * @return stateOrProvinceCode
+   * The county.
+   * @return county
   **/
-  @ApiModelProperty(value = "")
-  public String getStateOrProvinceCode() {
-    return stateOrProvinceCode;
+  @ApiModelProperty(value = "The county.")
+  public String getCounty() {
+    return county;
   }
 
-  public void setStateOrProvinceCode(String stateOrProvinceCode) {
-    this.stateOrProvinceCode = stateOrProvinceCode;
+  public void setCounty(String county) {
+    this.county = county;
+  }
+
+  public Address district(String district) {
+    this.district = district;
+    return this;
+  }
+
+   /**
+   * The district.
+   * @return district
+  **/
+  @ApiModelProperty(value = "The district.")
+  public String getDistrict() {
+    return district;
+  }
+
+  public void setDistrict(String district) {
+    this.district = district;
+  }
+
+  public Address stateOrRegion(String stateOrRegion) {
+    this.stateOrRegion = stateOrRegion;
+    return this;
+  }
+
+   /**
+   * The state or region.
+   * @return stateOrRegion
+  **/
+  @ApiModelProperty(value = "The state or region.")
+  public String getStateOrRegion() {
+    return stateOrRegion;
+  }
+
+  public void setStateOrRegion(String stateOrRegion) {
+    this.stateOrRegion = stateOrRegion;
+  }
+
+  public Address municipality(String municipality) {
+    this.municipality = municipality;
+    return this;
+  }
+
+   /**
+   * The municipality.
+   * @return municipality
+  **/
+  @ApiModelProperty(value = "The municipality.")
+  public String getMunicipality() {
+    return municipality;
+  }
+
+  public void setMunicipality(String municipality) {
+    this.municipality = municipality;
   }
 
   public Address postalCode(String postalCode) {
@@ -213,10 +309,10 @@ public class Address {
   }
 
    /**
-   * Get postalCode
+   * The postal code.
    * @return postalCode
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "The postal code.")
   public String getPostalCode() {
     return postalCode;
   }
@@ -231,10 +327,10 @@ public class Address {
   }
 
    /**
-   * Get countryCode
+   * The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
    * @return countryCode
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "The country code. A two-character country code, in ISO 3166-1 alpha-2 format.")
   public String getCountryCode() {
     return countryCode;
   }
@@ -249,16 +345,52 @@ public class Address {
   }
 
    /**
-   * Get phone
+   * The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all &#x60;AFN&#x60; (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped &#x60;MFN&#x60; (fulfilled by seller) order when the current date is past the Latest Delivery Date.
    * @return phone
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "The phone number of the buyer.  **Note**:  1. This attribute is only available for shipping address. 2. In some cases, the buyer phone number is suppressed:  a. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders. b. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date.")
   public String getPhone() {
     return phone;
   }
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+  public Address extendedFields(AddressExtendedFields extendedFields) {
+    this.extendedFields = extendedFields;
+    return this;
+  }
+
+   /**
+   * The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.
+   * @return extendedFields
+  **/
+  @ApiModelProperty(value = "The container for address extended fields. For example, street name or street number.   **Note**: This attribute is currently only available with Brazil shipping addresses.")
+  public AddressExtendedFields getExtendedFields() {
+    return extendedFields;
+  }
+
+  public void setExtendedFields(AddressExtendedFields extendedFields) {
+    this.extendedFields = extendedFields;
+  }
+
+  public Address addressType(AddressTypeEnum addressType) {
+    this.addressType = addressType;
+    return this;
+  }
+
+   /**
+   * The address type of the shipping address.
+   * @return addressType
+  **/
+  @ApiModelProperty(value = "The address type of the shipping address.")
+  public AddressTypeEnum getAddressType() {
+    return addressType;
+  }
+
+  public void setAddressType(AddressTypeEnum addressType) {
+    this.addressType = addressType;
   }
 
 
@@ -272,21 +404,25 @@ public class Address {
     }
     Address address = (Address) o;
     return Objects.equals(this.name, address.name) &&
+        Objects.equals(this.companyName, address.companyName) &&
         Objects.equals(this.addressLine1, address.addressLine1) &&
         Objects.equals(this.addressLine2, address.addressLine2) &&
         Objects.equals(this.addressLine3, address.addressLine3) &&
-        Objects.equals(this.districtOrCounty, address.districtOrCounty) &&
-        Objects.equals(this.email, address.email) &&
         Objects.equals(this.city, address.city) &&
-        Objects.equals(this.stateOrProvinceCode, address.stateOrProvinceCode) &&
+        Objects.equals(this.county, address.county) &&
+        Objects.equals(this.district, address.district) &&
+        Objects.equals(this.stateOrRegion, address.stateOrRegion) &&
+        Objects.equals(this.municipality, address.municipality) &&
         Objects.equals(this.postalCode, address.postalCode) &&
         Objects.equals(this.countryCode, address.countryCode) &&
-        Objects.equals(this.phone, address.phone);
+        Objects.equals(this.phone, address.phone) &&
+        Objects.equals(this.extendedFields, address.extendedFields) &&
+        Objects.equals(this.addressType, address.addressType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, addressLine1, addressLine2, addressLine3, districtOrCounty, email, city, stateOrProvinceCode, postalCode, countryCode, phone);
+    return Objects.hash(name, companyName, addressLine1, addressLine2, addressLine3, city, county, district, stateOrRegion, municipality, postalCode, countryCode, phone, extendedFields, addressType);
   }
 
 
@@ -296,16 +432,20 @@ public class Address {
     sb.append("class Address {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
     sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
     sb.append("    addressLine3: ").append(toIndentedString(addressLine3)).append("\n");
-    sb.append("    districtOrCounty: ").append(toIndentedString(districtOrCounty)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
-    sb.append("    stateOrProvinceCode: ").append(toIndentedString(stateOrProvinceCode)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
+    sb.append("    district: ").append(toIndentedString(district)).append("\n");
+    sb.append("    stateOrRegion: ").append(toIndentedString(stateOrRegion)).append("\n");
+    sb.append("    municipality: ").append(toIndentedString(municipality)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    extendedFields: ").append(toIndentedString(extendedFields)).append("\n");
+    sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

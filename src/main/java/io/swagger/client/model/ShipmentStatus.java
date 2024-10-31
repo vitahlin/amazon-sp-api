@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Merchant Fulfillment
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * Selling Partner API for Orders
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * OpenAPI spec version: v0
  * 
@@ -25,18 +25,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The shipment status.
+ * The shipment status to apply.
  */
 @JsonAdapter(ShipmentStatus.Adapter.class)
 public enum ShipmentStatus {
   
-  PURCHASED("Purchased"),
+  READYFORPICKUP("ReadyForPickup"),
   
-  REFUNDPENDING("RefundPending"),
+  PICKEDUP("PickedUp"),
   
-  REFUNDREJECTED("RefundRejected"),
-  
-  REFUNDAPPLIED("RefundApplied");
+  REFUSEDPICKUP("RefusedPickup");
 
   private String value;
 

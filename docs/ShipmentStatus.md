@@ -4,13 +4,11 @@
 ## Enum
 
 
-* `PURCHASED` (value: `"Purchased"`)
+* `READYFORPICKUP` (value: `"ReadyForPickup"`)
 
-* `REFUNDPENDING` (value: `"RefundPending"`)
+* `PICKEDUP` (value: `"PickedUp"`)
 
-* `REFUNDREJECTED` (value: `"RefundRejected"`)
-
-* `REFUNDAPPLIED` (value: `"RefundApplied"`)
+* `REFUSEDPICKUP` (value: `"RefusedPickup"`)
 
 
 
