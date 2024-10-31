@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** | An error code that identifies the type of error that occurred. | 
-**details** | **String** | Additional details that can help the caller understand or fix the issue. |  [optional]
-**message** | **String** | A message that describes the error condition. | 
+**code** | **String** | The code that identifies the type of error condition. | 
+**message** | **String** | A human readable description of the error condition. | 
+**details** | **String** | Additional information, if available, to clarify the error condition. |  [optional]
 
 
 
