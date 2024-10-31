@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addressLine1** | **String** | Street address information. | 
-**addressLine2** | **String** | Additional street address information. |  [optional]
-**city** | **String** | The city. | 
-**companyName** | **String** | The name of the business. |  [optional]
-**countryCode** | **String** | The country code in two-character ISO 3166-1 alpha-2 format. | 
-**email** | **String** | The email address. |  [optional]
-**name** | **String** | The name of the individual who is the primary contact. | 
-**phoneNumber** | **String** | The phone number. |  [optional]
-**postalCode** | **String** | The postal code. | 
-**stateOrProvinceCode** | **String** | The state or province code. |  [optional]
+**name** | **String** | The name of the person, business or institution at the address. | 
+**addressLine1** | **String** | The first line of the address. | 
+**addressLine2** | **String** | Additional address information, if required. |  [optional]
+**addressLine3** | **String** | Additional address information, if required. |  [optional]
+**city** | **String** | The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan. |  [optional]
+**districtOrCounty** | **String** | The district or county where the person, business, or institution is located. |  [optional]
+**stateOrRegion** | **String** | The state or region where the person, business or institution is located. | 
+**postalCode** | **String** | The postal code of the address. | 
+**countryCode** | **String** | The two digit country code. In ISO 3166-1 alpha-2 format. | 
+**phone** | **String** | The phone number of the person, business, or institution located at the address. |  [optional]
 
 
 
