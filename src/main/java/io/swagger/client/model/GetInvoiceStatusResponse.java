@@ -22,54 +22,56 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ErrorList;
+import io.swagger.client.model.ShipmentInvoiceStatusResponse;
 import java.io.IOException;
 
 /**
- * The tax classification for the entity.
+ * The response schema for the getInvoiceStatus operation.
  */
-@ApiModel(description = "The tax classification for the entity.")
+@ApiModel(description = "The response schema for the getInvoiceStatus operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:17:18.783+08:00")
-public class TaxClassification {
-  @SerializedName("Name")
-  private String name = null;
+public class GetInvoiceStatusResponse {
+  @SerializedName("payload")
+  private ShipmentInvoiceStatusResponse payload = null;
 
-  @SerializedName("Value")
-  private String value = null;
+  @SerializedName("errors")
+  private ErrorList errors = null;
 
-  public TaxClassification name(String name) {
-    this.name = name;
+  public GetInvoiceStatusResponse payload(ShipmentInvoiceStatusResponse payload) {
+    this.payload = payload;
     return this;
   }
 
    /**
-   * The type of tax.
-   * @return name
+   * The payload for the getInvoiceStatus operation.
+   * @return payload
   **/
-  @ApiModelProperty(value = "The type of tax.")
-  public String getName() {
-    return name;
+  @ApiModelProperty(value = "The payload for the getInvoiceStatus operation.")
+  public ShipmentInvoiceStatusResponse getPayload() {
+    return payload;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setPayload(ShipmentInvoiceStatusResponse payload) {
+    this.payload = payload;
   }
 
-  public TaxClassification value(String value) {
-    this.value = value;
+  public GetInvoiceStatusResponse errors(ErrorList errors) {
+    this.errors = errors;
     return this;
   }
 
    /**
-   * The entity&#39;s tax identifier.
-   * @return value
+   * Get errors
+   * @return errors
   **/
-  @ApiModelProperty(value = "The entity's tax identifier.")
-  public String getValue() {
-    return value;
+  @ApiModelProperty(value = "")
+  public ErrorList getErrors() {
+    return errors;
   }
 
-  public void setValue(String value) {
-    this.value = value;
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
   }
 
 
@@ -81,24 +83,24 @@ public class TaxClassification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TaxClassification taxClassification = (TaxClassification) o;
-    return Objects.equals(this.name, taxClassification.name) &&
-        Objects.equals(this.value, taxClassification.value);
+    GetInvoiceStatusResponse getInvoiceStatusResponse = (GetInvoiceStatusResponse) o;
+    return Objects.equals(this.payload, getInvoiceStatusResponse.payload) &&
+        Objects.equals(this.errors, getInvoiceStatusResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, value);
+    return Objects.hash(payload, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TaxClassification {\n");
+    sb.append("class GetInvoiceStatusResponse {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

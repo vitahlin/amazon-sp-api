@@ -15,16 +15,43 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ShipmentInvoiceStatusInfo;
+import java.io.IOException;
 
 /**
- * The list of payment method details.
+ * The shipment invoice status response.
  */
-@ApiModel(description = "The list of payment method details.")
+@ApiModel(description = "The shipment invoice status response.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:17:18.783+08:00")
-public class PaymentMethodDetailItemList extends ArrayList<String> {
+public class ShipmentInvoiceStatusResponse {
+  @SerializedName("Shipments")
+  private ShipmentInvoiceStatusInfo shipments = null;
+
+  public ShipmentInvoiceStatusResponse shipments(ShipmentInvoiceStatusInfo shipments) {
+    this.shipments = shipments;
+    return this;
+  }
+
+   /**
+   * Get shipments
+   * @return shipments
+  **/
+  @ApiModelProperty(value = "")
+  public ShipmentInvoiceStatusInfo getShipments() {
+    return shipments;
+  }
+
+  public void setShipments(ShipmentInvoiceStatusInfo shipments) {
+    this.shipments = shipments;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -34,20 +61,22 @@ public class PaymentMethodDetailItemList extends ArrayList<String> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    ShipmentInvoiceStatusResponse shipmentInvoiceStatusResponse = (ShipmentInvoiceStatusResponse) o;
+    return Objects.equals(this.shipments, shipmentInvoiceStatusResponse.shipments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(shipments);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentMethodDetailItemList {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class ShipmentInvoiceStatusResponse {\n");
+    
+    sb.append("    shipments: ").append(toIndentedString(shipments)).append("\n");
     sb.append("}");
     return sb.toString();
   }

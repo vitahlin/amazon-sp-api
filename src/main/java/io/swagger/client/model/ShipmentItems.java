@@ -16,15 +16,16 @@ package io.swagger.client.model;
 import java.util.Objects;
 import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
+import io.swagger.client.model.ShipmentItem;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The list of payment method details.
+ * A list of shipment items.
  */
-@ApiModel(description = "The list of payment method details.")
+@ApiModel(description = "A list of shipment items.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:17:18.783+08:00")
-public class PaymentMethodDetailItemList extends ArrayList<String> {
+public class ShipmentItems extends ArrayList<ShipmentItem> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -46,7 +47,7 @@ public class PaymentMethodDetailItemList extends ArrayList<String> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentMethodDetailItemList {\n");
+    sb.append("class ShipmentItems {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

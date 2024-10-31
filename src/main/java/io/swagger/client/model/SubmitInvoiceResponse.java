@@ -15,16 +15,43 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ErrorList;
+import java.io.IOException;
 
 /**
- * The list of payment method details.
+ * The response schema for the submitInvoice operation.
  */
-@ApiModel(description = "The list of payment method details.")
+@ApiModel(description = "The response schema for the submitInvoice operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:17:18.783+08:00")
-public class PaymentMethodDetailItemList extends ArrayList<String> {
+public class SubmitInvoiceResponse {
+  @SerializedName("errors")
+  private ErrorList errors = null;
+
+  public SubmitInvoiceResponse errors(ErrorList errors) {
+    this.errors = errors;
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public ErrorList getErrors() {
+    return errors;
+  }
+
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -34,20 +61,22 @@ public class PaymentMethodDetailItemList extends ArrayList<String> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    SubmitInvoiceResponse submitInvoiceResponse = (SubmitInvoiceResponse) o;
+    return Objects.equals(this.errors, submitInvoiceResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentMethodDetailItemList {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class SubmitInvoiceResponse {\n");
+    
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
