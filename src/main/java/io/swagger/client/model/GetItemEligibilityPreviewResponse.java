@@ -22,75 +22,56 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ErrorList;
+import io.swagger.client.model.ItemEligibilityPreview;
 import java.io.IOException;
 
 /**
- * Error response returned when the request is unsuccessful.
+ * The response schema for the getItemEligibilityPreview operation.
  */
-@ApiModel(description = "Error response returned when the request is unsuccessful.")
+@ApiModel(description = "The response schema for the getItemEligibilityPreview operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:50:36.090+08:00")
-public class Error {
-  @SerializedName("code")
-  private String code = null;
+public class GetItemEligibilityPreviewResponse {
+  @SerializedName("payload")
+  private ItemEligibilityPreview payload = null;
 
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("errors")
+  private ErrorList errors = null;
 
-  @SerializedName("details")
-  private String details = null;
-
-  public Error code(String code) {
-    this.code = code;
+  public GetItemEligibilityPreviewResponse payload(ItemEligibilityPreview payload) {
+    this.payload = payload;
     return this;
   }
 
    /**
-   * An error code that identifies the type of error that occurred.
-   * @return code
+   * The payload for the getItemEligibilityPreview operation.
+   * @return payload
   **/
-  @ApiModelProperty(required = true, value = "An error code that identifies the type of error that occurred.")
-  public String getCode() {
-    return code;
+  @ApiModelProperty(value = "The payload for the getItemEligibilityPreview operation.")
+  public ItemEligibilityPreview getPayload() {
+    return payload;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setPayload(ItemEligibilityPreview payload) {
+    this.payload = payload;
   }
 
-  public Error message(String message) {
-    this.message = message;
+  public GetItemEligibilityPreviewResponse errors(ErrorList errors) {
+    this.errors = errors;
     return this;
   }
 
    /**
-   * A message that describes the error condition in a human-readable form.
-   * @return message
+   * An unexpected condition occurred during the GetItemEligibilityPreview operation.
+   * @return errors
   **/
-  @ApiModelProperty(value = "A message that describes the error condition in a human-readable form.")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(value = "An unexpected condition occurred during the GetItemEligibilityPreview operation.")
+  public ErrorList getErrors() {
+    return errors;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public Error details(String details) {
-    this.details = details;
-    return this;
-  }
-
-   /**
-   * Additional information that can help the caller understand or fix the issue.
-   * @return details
-  **/
-  @ApiModelProperty(value = "Additional information that can help the caller understand or fix the issue.")
-  public String getDetails() {
-    return details;
-  }
-
-  public void setDetails(String details) {
-    this.details = details;
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
   }
 
 
@@ -102,26 +83,24 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.code, error.code) &&
-        Objects.equals(this.message, error.message) &&
-        Objects.equals(this.details, error.details);
+    GetItemEligibilityPreviewResponse getItemEligibilityPreviewResponse = (GetItemEligibilityPreviewResponse) o;
+    return Objects.equals(this.payload, getItemEligibilityPreviewResponse.payload) &&
+        Objects.equals(this.errors, getItemEligibilityPreviewResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, details);
+    return Objects.hash(payload, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class GetItemEligibilityPreviewResponse {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
