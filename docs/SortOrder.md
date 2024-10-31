@@ -4,9 +4,9 @@
 ## Enum
 
 
-* `ASCENDING` (value: `"ASCENDING"`)
+* `ASC` (value: `"ASC"`)
 
-* `DESCENDING` (value: `"DESCENDING"`)
+* `DESC` (value: `"DESC"`)
 
 
 
