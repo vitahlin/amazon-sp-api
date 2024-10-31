@@ -29,7 +29,7 @@ import java.io.IOException;
  * Information about the seller&#39;s primary contact.
  */
 @ApiModel(description = "Information about the seller's primary contact.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-30T20:34:27.706+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
 public class PrimaryContact {
   @SerializedName("name")
   private String name = null;

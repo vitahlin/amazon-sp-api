@@ -29,7 +29,7 @@ import java.io.IOException;
  * Information about the seller&#39;s business. Certain fields may be omitted depending on the seller&#39;s &#x60;businessType&#x60;.
  */
 @ApiModel(description = "Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-30T20:34:27.706+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
 public class Business {
   @SerializedName("name")
   private String name = null;

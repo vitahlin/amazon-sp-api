@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Sales
- * The Selling Partner API for Sales provides APIs related to sales performance.
+ * Selling Partner API for Sellers
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * OpenAPI spec version: v1
  * 
@@ -28,7 +28,7 @@ import java.io.IOException;
  * Error response returned when the request is unsuccessful.
  */
 @ApiModel(description = "Error response returned when the request is unsuccessful.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:14:33.070+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
 public class Error {
   @SerializedName("code")
   private String code = null;
@@ -45,10 +45,10 @@ public class Error {
   }
 
    /**
-   * An error code that identifies the type of error that occured.
+   * An error code that identifies the type of error that occurred.
    * @return code
   **/
-  @ApiModelProperty(required = true, value = "An error code that identifies the type of error that occured.")
+  @ApiModelProperty(required = true, value = "An error code that identifies the type of error that occurred.")
   public String getCode() {
     return code;
   }
@@ -81,10 +81,10 @@ public class Error {
   }
 
    /**
-   * Additional details that can help the caller understand or fix the issue.
+   * Additional details that can help you understand or fix the issue.
    * @return details
   **/
-  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
+  @ApiModelProperty(value = "Additional details that can help you understand or fix the issue.")
   public String getDetails() {
     return details;
   }

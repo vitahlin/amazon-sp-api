@@ -33,7 +33,7 @@ import java.util.List;
  * The response schema for the &#x60;getAccount&#x60; operation.
  */
 @ApiModel(description = "The response schema for the `getAccount` operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-30T20:34:27.706+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
 public class Account {
   @SerializedName("marketplaceLevelAttributes")
   private List<MarketplaceLevelAttributes> marketplaceLevelAttributes = new ArrayList<MarketplaceLevelAttributes>();

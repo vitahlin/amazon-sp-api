@@ -29,7 +29,7 @@ import java.io.IOException;
  * Attributes that define the seller&#39;s presence and status within a specific marketplace. These attributes include the marketplace details, store name, listing status, and the selling plan the seller is subscribed to.
  */
 @ApiModel(description = "Attributes that define the seller's presence and status within a specific marketplace. These attributes include the marketplace details, store name, listing status, and the selling plan the seller is subscribed to.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-30T20:34:27.706+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
 public class MarketplaceLevelAttributes {
   @SerializedName("marketplace")
   private Marketplace marketplace = null;
