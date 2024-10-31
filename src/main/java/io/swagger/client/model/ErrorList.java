@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Listings Items
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
+ * Selling Partner API for Listings Restrictions
+ * The Selling Partner API for Listings Restrictions provides programmatic access to restrictions on Amazon catalog listings.  For more information, see the [Listings Restrictions API Use Case Guide](doc:listings-restrictions-api-v2021-08-01-use-case-guide).
  *
  * OpenAPI spec version: 2021-08-01
  * 
@@ -15,15 +15,8 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Error;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,34 +24,8 @@ import java.util.List;
  * A list of error responses returned when a request is unsuccessful.
  */
 @ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:02:38.901+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
-
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
-    return this;
-  }
-
-   /**
-   * Get errors
-   * @return errors
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Error> getErrors() {
-    return errors;
-  }
-
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
-  }
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:03:24.282+08:00")
+public class ErrorList extends ArrayList<Error> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,13 +35,12 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -82,8 +48,7 @@ public class ErrorList {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorList {\n");
-    
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }
