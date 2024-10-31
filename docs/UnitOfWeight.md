@@ -4,9 +4,9 @@
 ## Enum
 
 
-* `LB` (value: `"LB"`)
+* `OZ` (value: `"oz"`)
 
-* `KG` (value: `"KG"`)
+* `G` (value: `"g"`)
 
 
 

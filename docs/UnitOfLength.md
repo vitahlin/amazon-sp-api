@@ -4,7 +4,9 @@
 ## Enum
 
 
-* `CM` (value: `"Cm"`)
+* `INCHES` (value: `"inches"`)
+
+* `CENTIMETERS` (value: `"centimeters"`)
 
 
 
