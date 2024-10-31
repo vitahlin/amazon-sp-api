@@ -4,15 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scheduledPackageId** | [**ScheduledPackageId**](ScheduledPackageId.md) |  | 
-**packageDimensions** | [**Dimensions**](Dimensions.md) |  | 
-**packageWeight** | [**Weight**](Weight.md) |  | 
-**packageItems** | [**Items**](Items.md) |  |  [optional]
-**packageTimeSlot** | [**TimeSlot**](TimeSlot.md) |  | 
-**packageIdentifier** | **String** |  |  [optional]
-**invoice** | [**InvoiceData**](InvoiceData.md) |  |  [optional]
-**packageStatus** | [**PackageStatus**](PackageStatus.md) |  |  [optional]
-**trackingDetails** | [**TrackingDetails**](TrackingDetails.md) |  |  [optional]
+**dimensions** | [**Dimensions**](Dimensions.md) |  | 
+**weight** | [**Weight**](Weight.md) |  | 
+**insuredValue** | [**Currency**](Currency.md) |  | 
+**isHazmat** | **Boolean** | When true, the package contains hazardous materials. Defaults to false. |  [optional]
+**sellerDisplayName** | **String** | The seller name displayed on the label. |  [optional]
+**charges** | [**ChargeList**](ChargeList.md) |  |  [optional]
+**packageClientReferenceId** | **String** |  | 
+**items** | [**ItemList**](ItemList.md) |  | 
 
 
 

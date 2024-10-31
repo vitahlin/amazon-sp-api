@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | [**BigDecimal**](BigDecimal.md) | Decimal value of the currency. | 
-**code** | **String** | ISO 4217 standard of a currency code. | 
+**value** | [**BigDecimal**](BigDecimal.md) | The monetary value. | 
+**unit** | **String** | The ISO 4217 format 3-character currency code. | 
 
 
 

@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**includedBenefits** | [**IncludedBenefits**](IncludedBenefits.md) |  |  [optional]
-**excludedBenefits** | [**ExcludedBenefits**](ExcludedBenefits.md) |  |  [optional]
+**includedBenefits** | [**IncludedBenefits**](IncludedBenefits.md) |  | 
+**excludedBenefits** | [**ExcludedBenefits**](ExcludedBenefits.md) |  | 
 
 
 

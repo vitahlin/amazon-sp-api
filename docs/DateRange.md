@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**earliest** | **String** | The earliest point in a date range. | 
-**latest** | **String** | The latest point in a date range. | 
+**startDate** | **String** | Start Date for query . |  [optional]
+**endDate** | **String** | end date for query. |  [optional]
 
 
 
