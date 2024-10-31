@@ -23,25 +23,30 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ErrorList;
-import io.swagger.client.model.GetSchemaResponseLinks;
-import io.swagger.client.model.Schema;
+import io.swagger.client.model.GetSolicitationActionResponseEmbedded;
+import io.swagger.client.model.GetSolicitationActionResponseLinks;
+import io.swagger.client.model.SolicitationsAction;
 import java.io.IOException;
 
 /**
- * GetSchemaResponse
+ * Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
  */
+@ApiModel(description = "Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class GetSchemaResponse {
+public class GetSolicitationActionResponse {
   @SerializedName("_links")
-  private GetSchemaResponseLinks links = null;
+  private GetSolicitationActionResponseLinks links = null;
+
+  @SerializedName("_embedded")
+  private GetSolicitationActionResponseEmbedded embedded = null;
 
   @SerializedName("payload")
-  private Schema payload = null;
+  private SolicitationsAction payload = null;
 
   @SerializedName("errors")
   private ErrorList errors = null;
 
-  public GetSchemaResponse links(GetSchemaResponseLinks links) {
+  public GetSolicitationActionResponse links(GetSolicitationActionResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -51,15 +56,33 @@ public class GetSchemaResponse {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public GetSchemaResponseLinks getLinks() {
+  public GetSolicitationActionResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(GetSchemaResponseLinks links) {
+  public void setLinks(GetSolicitationActionResponseLinks links) {
     this.links = links;
   }
 
-  public GetSchemaResponse payload(Schema payload) {
+  public GetSolicitationActionResponse embedded(GetSolicitationActionResponseEmbedded embedded) {
+    this.embedded = embedded;
+    return this;
+  }
+
+   /**
+   * Get embedded
+   * @return embedded
+  **/
+  @ApiModelProperty(value = "")
+  public GetSolicitationActionResponseEmbedded getEmbedded() {
+    return embedded;
+  }
+
+  public void setEmbedded(GetSolicitationActionResponseEmbedded embedded) {
+    this.embedded = embedded;
+  }
+
+  public GetSolicitationActionResponse payload(SolicitationsAction payload) {
     this.payload = payload;
     return this;
   }
@@ -69,15 +92,15 @@ public class GetSchemaResponse {
    * @return payload
   **/
   @ApiModelProperty(value = "")
-  public Schema getPayload() {
+  public SolicitationsAction getPayload() {
     return payload;
   }
 
-  public void setPayload(Schema payload) {
+  public void setPayload(SolicitationsAction payload) {
     this.payload = payload;
   }
 
-  public GetSchemaResponse errors(ErrorList errors) {
+  public GetSolicitationActionResponse errors(ErrorList errors) {
     this.errors = errors;
     return this;
   }
@@ -104,24 +127,26 @@ public class GetSchemaResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetSchemaResponse getSchemaResponse = (GetSchemaResponse) o;
-    return Objects.equals(this.links, getSchemaResponse.links) &&
-        Objects.equals(this.payload, getSchemaResponse.payload) &&
-        Objects.equals(this.errors, getSchemaResponse.errors);
+    GetSolicitationActionResponse getSolicitationActionResponse = (GetSolicitationActionResponse) o;
+    return Objects.equals(this.links, getSolicitationActionResponse.links) &&
+        Objects.equals(this.embedded, getSolicitationActionResponse.embedded) &&
+        Objects.equals(this.payload, getSolicitationActionResponse.payload) &&
+        Objects.equals(this.errors, getSolicitationActionResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, payload, errors);
+    return Objects.hash(links, embedded, payload, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetSchemaResponse {\n");
+    sb.append("class GetSolicitationActionResponse {\n");
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");

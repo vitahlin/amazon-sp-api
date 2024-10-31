@@ -22,54 +22,40 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.GetSolicitationActionResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * A Link object.
+ * GetSolicitationActionsForOrderResponseEmbedded
  */
-@ApiModel(description = "A Link object.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class LinkObject {
-  @SerializedName("href")
-  private String href = null;
+public class GetSolicitationActionsForOrderResponseEmbedded {
+  @SerializedName("actions")
+  private List<GetSolicitationActionResponse> actions = new ArrayList<GetSolicitationActionResponse>();
 
-  @SerializedName("name")
-  private String name = null;
+  public GetSolicitationActionsForOrderResponseEmbedded actions(List<GetSolicitationActionResponse> actions) {
+    this.actions = actions;
+    return this;
+  }
 
-  public LinkObject href(String href) {
-    this.href = href;
+  public GetSolicitationActionsForOrderResponseEmbedded addActionsItem(GetSolicitationActionResponse actionsItem) {
+    this.actions.add(actionsItem);
     return this;
   }
 
    /**
-   * A URI for this object.
-   * @return href
+   * Get actions
+   * @return actions
   **/
-  @ApiModelProperty(required = true, value = "A URI for this object.")
-  public String getHref() {
-    return href;
+  @ApiModelProperty(required = true, value = "")
+  public List<GetSolicitationActionResponse> getActions() {
+    return actions;
   }
 
-  public void setHref(String href) {
-    this.href = href;
-  }
-
-  public LinkObject name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * An identifier for this object.
-   * @return name
-  **/
-  @ApiModelProperty(value = "An identifier for this object.")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void setActions(List<GetSolicitationActionResponse> actions) {
+    this.actions = actions;
   }
 
 
@@ -81,24 +67,22 @@ public class LinkObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinkObject linkObject = (LinkObject) o;
-    return Objects.equals(this.href, linkObject.href) &&
-        Objects.equals(this.name, linkObject.name);
+    GetSolicitationActionsForOrderResponseEmbedded getSolicitationActionsForOrderResponseEmbedded = (GetSolicitationActionsForOrderResponseEmbedded) o;
+    return Objects.equals(this.actions, getSolicitationActionsForOrderResponseEmbedded.actions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, name);
+    return Objects.hash(actions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinkObject {\n");
+    sb.append("class GetSolicitationActionsForOrderResponseEmbedded {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

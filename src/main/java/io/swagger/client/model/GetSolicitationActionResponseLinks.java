@@ -22,54 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.LinkObject;
 import java.io.IOException;
 
 /**
- * A Link object.
+ * GetSolicitationActionResponseLinks
  */
-@ApiModel(description = "A Link object.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class LinkObject {
-  @SerializedName("href")
-  private String href = null;
+public class GetSolicitationActionResponseLinks {
+  @SerializedName("self")
+  private LinkObject self = null;
 
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("schema")
+  private LinkObject schema = null;
 
-  public LinkObject href(String href) {
-    this.href = href;
+  public GetSolicitationActionResponseLinks self(LinkObject self) {
+    this.self = self;
     return this;
   }
 
    /**
-   * A URI for this object.
-   * @return href
+   * Get self
+   * @return self
   **/
-  @ApiModelProperty(required = true, value = "A URI for this object.")
-  public String getHref() {
-    return href;
+  @ApiModelProperty(required = true, value = "")
+  public LinkObject getSelf() {
+    return self;
   }
 
-  public void setHref(String href) {
-    this.href = href;
+  public void setSelf(LinkObject self) {
+    this.self = self;
   }
 
-  public LinkObject name(String name) {
-    this.name = name;
+  public GetSolicitationActionResponseLinks schema(LinkObject schema) {
+    this.schema = schema;
     return this;
   }
 
    /**
-   * An identifier for this object.
-   * @return name
+   * Get schema
+   * @return schema
   **/
-  @ApiModelProperty(value = "An identifier for this object.")
-  public String getName() {
-    return name;
+  @ApiModelProperty(required = true, value = "")
+  public LinkObject getSchema() {
+    return schema;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setSchema(LinkObject schema) {
+    this.schema = schema;
   }
 
 
@@ -81,24 +81,24 @@ public class LinkObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinkObject linkObject = (LinkObject) o;
-    return Objects.equals(this.href, linkObject.href) &&
-        Objects.equals(this.name, linkObject.name);
+    GetSolicitationActionResponseLinks getSolicitationActionResponseLinks = (GetSolicitationActionResponseLinks) o;
+    return Objects.equals(this.self, getSolicitationActionResponseLinks.self) &&
+        Objects.equals(this.schema, getSolicitationActionResponseLinks.schema);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, name);
+    return Objects.hash(self, schema);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinkObject {\n");
+    sb.append("class GetSolicitationActionResponseLinks {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,45 +25,24 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * A Link object.
+ * A simple object containing the name of the template.
  */
-@ApiModel(description = "A Link object.")
+@ApiModel(description = "A simple object containing the name of the template.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class LinkObject {
-  @SerializedName("href")
-  private String href = null;
-
+public class SolicitationsAction {
   @SerializedName("name")
   private String name = null;
 
-  public LinkObject href(String href) {
-    this.href = href;
-    return this;
-  }
-
-   /**
-   * A URI for this object.
-   * @return href
-  **/
-  @ApiModelProperty(required = true, value = "A URI for this object.")
-  public String getHref() {
-    return href;
-  }
-
-  public void setHref(String href) {
-    this.href = href;
-  }
-
-  public LinkObject name(String name) {
+  public SolicitationsAction name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * An identifier for this object.
+   * Get name
    * @return name
   **/
-  @ApiModelProperty(value = "An identifier for this object.")
+  @ApiModelProperty(required = true, value = "")
   public String getName() {
     return name;
   }
@@ -81,23 +60,21 @@ public class LinkObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinkObject linkObject = (LinkObject) o;
-    return Objects.equals(this.href, linkObject.href) &&
-        Objects.equals(this.name, linkObject.name);
+    SolicitationsAction solicitationsAction = (SolicitationsAction) o;
+    return Objects.equals(this.name, solicitationsAction.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, name);
+    return Objects.hash(name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinkObject {\n");
+    sb.append("class SolicitationsAction {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();

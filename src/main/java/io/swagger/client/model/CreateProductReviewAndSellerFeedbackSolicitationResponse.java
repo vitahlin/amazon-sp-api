@@ -22,54 +22,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ErrorList;
 import java.io.IOException;
 
 /**
- * A Link object.
+ * The response schema for the createProductReviewAndSellerFeedbackSolicitation operation.
  */
-@ApiModel(description = "A Link object.")
+@ApiModel(description = "The response schema for the createProductReviewAndSellerFeedbackSolicitation operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class LinkObject {
-  @SerializedName("href")
-  private String href = null;
+public class CreateProductReviewAndSellerFeedbackSolicitationResponse {
+  @SerializedName("errors")
+  private ErrorList errors = null;
 
-  @SerializedName("name")
-  private String name = null;
-
-  public LinkObject href(String href) {
-    this.href = href;
+  public CreateProductReviewAndSellerFeedbackSolicitationResponse errors(ErrorList errors) {
+    this.errors = errors;
     return this;
   }
 
    /**
-   * A URI for this object.
-   * @return href
+   * Get errors
+   * @return errors
   **/
-  @ApiModelProperty(required = true, value = "A URI for this object.")
-  public String getHref() {
-    return href;
+  @ApiModelProperty(value = "")
+  public ErrorList getErrors() {
+    return errors;
   }
 
-  public void setHref(String href) {
-    this.href = href;
-  }
-
-  public LinkObject name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * An identifier for this object.
-   * @return name
-  **/
-  @ApiModelProperty(value = "An identifier for this object.")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
   }
 
 
@@ -81,24 +61,22 @@ public class LinkObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinkObject linkObject = (LinkObject) o;
-    return Objects.equals(this.href, linkObject.href) &&
-        Objects.equals(this.name, linkObject.name);
+    CreateProductReviewAndSellerFeedbackSolicitationResponse createProductReviewAndSellerFeedbackSolicitationResponse = (CreateProductReviewAndSellerFeedbackSolicitationResponse) o;
+    return Objects.equals(this.errors, createProductReviewAndSellerFeedbackSolicitationResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, name);
+    return Objects.hash(errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinkObject {\n");
+    sb.append("class CreateProductReviewAndSellerFeedbackSolicitationResponse {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

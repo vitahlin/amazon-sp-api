@@ -22,54 +22,61 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.LinkObject;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * A Link object.
+ * GetSolicitationActionsForOrderResponseLinks
  */
-@ApiModel(description = "A Link object.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:18:59.051+08:00")
-public class LinkObject {
-  @SerializedName("href")
-  private String href = null;
+public class GetSolicitationActionsForOrderResponseLinks {
+  @SerializedName("self")
+  private LinkObject self = null;
 
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("actions")
+  private List<LinkObject> actions = new ArrayList<LinkObject>();
 
-  public LinkObject href(String href) {
-    this.href = href;
+  public GetSolicitationActionsForOrderResponseLinks self(LinkObject self) {
+    this.self = self;
     return this;
   }
 
    /**
-   * A URI for this object.
-   * @return href
+   * Get self
+   * @return self
   **/
-  @ApiModelProperty(required = true, value = "A URI for this object.")
-  public String getHref() {
-    return href;
+  @ApiModelProperty(required = true, value = "")
+  public LinkObject getSelf() {
+    return self;
   }
 
-  public void setHref(String href) {
-    this.href = href;
+  public void setSelf(LinkObject self) {
+    this.self = self;
   }
 
-  public LinkObject name(String name) {
-    this.name = name;
+  public GetSolicitationActionsForOrderResponseLinks actions(List<LinkObject> actions) {
+    this.actions = actions;
+    return this;
+  }
+
+  public GetSolicitationActionsForOrderResponseLinks addActionsItem(LinkObject actionsItem) {
+    this.actions.add(actionsItem);
     return this;
   }
 
    /**
-   * An identifier for this object.
-   * @return name
+   * Eligible actions for the specified amazonOrderId.
+   * @return actions
   **/
-  @ApiModelProperty(value = "An identifier for this object.")
-  public String getName() {
-    return name;
+  @ApiModelProperty(required = true, value = "Eligible actions for the specified amazonOrderId.")
+  public List<LinkObject> getActions() {
+    return actions;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setActions(List<LinkObject> actions) {
+    this.actions = actions;
   }
 
 
@@ -81,24 +88,24 @@ public class LinkObject {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinkObject linkObject = (LinkObject) o;
-    return Objects.equals(this.href, linkObject.href) &&
-        Objects.equals(this.name, linkObject.name);
+    GetSolicitationActionsForOrderResponseLinks getSolicitationActionsForOrderResponseLinks = (GetSolicitationActionsForOrderResponseLinks) o;
+    return Objects.equals(this.self, getSolicitationActionsForOrderResponseLinks.self) &&
+        Objects.equals(this.actions, getSolicitationActionsForOrderResponseLinks.actions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, name);
+    return Objects.hash(self, actions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinkObject {\n");
+    sb.append("class GetSolicitationActionsForOrderResponseLinks {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
