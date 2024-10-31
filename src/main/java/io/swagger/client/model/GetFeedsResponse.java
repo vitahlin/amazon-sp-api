@@ -22,41 +22,55 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
+import io.swagger.client.model.FeedList;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * Response schema.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "Response schema.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:52:36.841+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class GetFeedsResponse {
+  @SerializedName("feeds")
+  private FeedList feeds = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("nextToken")
+  private String nextToken = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public GetFeedsResponse feeds(FeedList feeds) {
+    this.feeds = feeds;
     return this;
   }
 
    /**
-   * An error response returned when the request is unsuccessful.
-   * @return errors
+   * The feeds.
+   * @return feeds
   **/
-  @ApiModelProperty(required = true, value = "An error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "The feeds.")
+  public FeedList getFeeds() {
+    return feeds;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setFeeds(FeedList feeds) {
+    this.feeds = feeds;
+  }
+
+  public GetFeedsResponse nextToken(String nextToken) {
+    this.nextToken = nextToken;
+    return this;
+  }
+
+   /**
+   * Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.
+   * @return nextToken
+  **/
+  @ApiModelProperty(value = "Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter.")
+  public String getNextToken() {
+    return nextToken;
+  }
+
+  public void setNextToken(String nextToken) {
+    this.nextToken = nextToken;
   }
 
 
@@ -68,22 +82,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    GetFeedsResponse getFeedsResponse = (GetFeedsResponse) o;
+    return Objects.equals(this.feeds, getFeedsResponse.feeds) &&
+        Objects.equals(this.nextToken, getFeedsResponse.nextToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(feeds, nextToken);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class GetFeedsResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    feeds: ").append(toIndentedString(feeds)).append("\n");
+    sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

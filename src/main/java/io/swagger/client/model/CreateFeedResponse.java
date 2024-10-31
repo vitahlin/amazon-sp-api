@@ -22,41 +22,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * Response schema.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "Response schema.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:52:36.841+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class CreateFeedResponse {
+  @SerializedName("feedId")
+  private String feedId = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public CreateFeedResponse feedId(String feedId) {
+    this.feedId = feedId;
     return this;
   }
 
    /**
-   * An error response returned when the request is unsuccessful.
-   * @return errors
+   * The identifier for the feed. This identifier is unique only in combination with a seller ID.
+   * @return feedId
   **/
-  @ApiModelProperty(required = true, value = "An error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "The identifier for the feed. This identifier is unique only in combination with a seller ID.")
+  public String getFeedId() {
+    return feedId;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setFeedId(String feedId) {
+    this.feedId = feedId;
   }
 
 
@@ -68,22 +60,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    CreateFeedResponse createFeedResponse = (CreateFeedResponse) o;
+    return Objects.equals(this.feedId, createFeedResponse.feedId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(feedId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class CreateFeedResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    feedId: ").append(toIndentedString(feedId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

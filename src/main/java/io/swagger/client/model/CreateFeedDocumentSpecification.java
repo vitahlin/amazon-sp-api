@@ -22,41 +22,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * Specifies the content type for the createFeedDocument operation.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "Specifies the content type for the createFeedDocument operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:52:36.841+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class CreateFeedDocumentSpecification {
+  @SerializedName("contentType")
+  private String contentType = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public CreateFeedDocumentSpecification contentType(String contentType) {
+    this.contentType = contentType;
     return this;
   }
 
    /**
-   * An error response returned when the request is unsuccessful.
-   * @return errors
+   * The content type of the feed.
+   * @return contentType
   **/
-  @ApiModelProperty(required = true, value = "An error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "The content type of the feed.")
+  public String getContentType() {
+    return contentType;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setContentType(String contentType) {
+    this.contentType = contentType;
   }
 
 
@@ -68,22 +60,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    CreateFeedDocumentSpecification createFeedDocumentSpecification = (CreateFeedDocumentSpecification) o;
+    return Objects.equals(this.contentType, createFeedDocumentSpecification.contentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(contentType);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class CreateFeedDocumentSpecification {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
