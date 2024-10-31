@@ -32,7 +32,7 @@ import java.util.List;
  * This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
  */
 @ApiModel(description = "This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:02:38.901+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T21:00:15.620+08:00")
 public class IssueEnforcements {
   @SerializedName("actions")
   private List<IssueEnforcementAction> actions = new ArrayList<IssueEnforcementAction>();

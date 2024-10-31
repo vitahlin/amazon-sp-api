@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
  * Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption&#39;s expiry date.
  */
 @ApiModel(description = "Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption's expiry date.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:02:38.901+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T21:00:15.620+08:00")
 public class IssueExemption {
   /**
    * This field indicates the current exemption status for the listed enforcement actions. It can take values such as &#x60;EXEMPT&#x60;, signifying permanent exemption, &#x60;EXEMPT_UNTIL_EXPIRY_DATE&#x60; indicating temporary exemption until a specified date, or &#x60;NOT_EXEMPT&#x60; signifying no exemptions, and enforcement actions were already applied.

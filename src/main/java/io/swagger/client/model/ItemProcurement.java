@@ -29,7 +29,7 @@ import java.io.IOException;
  * The vendor procurement information for the listings item.
  */
 @ApiModel(description = "The vendor procurement information for the listings item.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:02:38.901+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T21:00:15.620+08:00")
 public class ItemProcurement {
   @SerializedName("costPrice")
   private Money costPrice = null;

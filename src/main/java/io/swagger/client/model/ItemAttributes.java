@@ -23,7 +23,7 @@ import java.util.Map;
  * A JSON object containing structured listings item attribute data keyed by attribute name.
  */
 @ApiModel(description = "A JSON object containing structured listings item attribute data keyed by attribute name.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:02:38.901+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T21:00:15.620+08:00")
 public class ItemAttributes extends HashMap<String, Object> {
 
   @Override
