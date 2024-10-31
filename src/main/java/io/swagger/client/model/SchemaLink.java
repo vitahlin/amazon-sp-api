@@ -22,75 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.SchemaLinkLink;
 import java.io.IOException;
 
 /**
- * Error response returned when the request is unsuccessful.
+ * SchemaLink
  */
-@ApiModel(description = "Error response returned when the request is unsuccessful.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:09:41.277+08:00")
-public class Error {
-  @SerializedName("code")
-  private String code = null;
+public class SchemaLink {
+  @SerializedName("link")
+  private SchemaLinkLink link = null;
 
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("checksum")
+  private String checksum = null;
 
-  @SerializedName("details")
-  private String details = null;
-
-  public Error code(String code) {
-    this.code = code;
+  public SchemaLink link(SchemaLinkLink link) {
+    this.link = link;
     return this;
   }
 
    /**
-   * An error code that identifies the type of error that occurred.
-   * @return code
+   * Get link
+   * @return link
   **/
-  @ApiModelProperty(required = true, value = "An error code that identifies the type of error that occurred.")
-  public String getCode() {
-    return code;
+  @ApiModelProperty(required = true, value = "")
+  public SchemaLinkLink getLink() {
+    return link;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setLink(SchemaLinkLink link) {
+    this.link = link;
   }
 
-  public Error message(String message) {
-    this.message = message;
+  public SchemaLink checksum(String checksum) {
+    this.checksum = checksum;
     return this;
   }
 
    /**
-   * A message that describes the error condition.
-   * @return message
+   * Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
+   * @return checksum
   **/
-  @ApiModelProperty(required = true, value = "A message that describes the error condition.")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(required = true, value = "Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.")
+  public String getChecksum() {
+    return checksum;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public Error details(String details) {
-    this.details = details;
-    return this;
-  }
-
-   /**
-   * Additional details that can help the caller understand or fix the issue.
-   * @return details
-  **/
-  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
-  public String getDetails() {
-    return details;
-  }
-
-  public void setDetails(String details) {
-    this.details = details;
+  public void setChecksum(String checksum) {
+    this.checksum = checksum;
   }
 
 
@@ -102,26 +81,24 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.code, error.code) &&
-        Objects.equals(this.message, error.message) &&
-        Objects.equals(this.details, error.details);
+    SchemaLink schemaLink = (SchemaLink) o;
+    return Objects.equals(this.link, schemaLink.link) &&
+        Objects.equals(this.checksum, schemaLink.checksum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, details);
+    return Objects.hash(link, checksum);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class SchemaLink {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
     sb.append("}");
     return sb.toString();
   }

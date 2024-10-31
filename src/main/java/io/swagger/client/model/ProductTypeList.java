@@ -22,75 +22,62 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ProductType;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Error response returned when the request is unsuccessful.
+ * A list of Amazon product types with definitions available.
  */
-@ApiModel(description = "Error response returned when the request is unsuccessful.")
+@ApiModel(description = "A list of Amazon product types with definitions available.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:09:41.277+08:00")
-public class Error {
-  @SerializedName("code")
-  private String code = null;
+public class ProductTypeList {
+  @SerializedName("productTypes")
+  private List<ProductType> productTypes = new ArrayList<ProductType>();
 
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("productTypeVersion")
+  private String productTypeVersion = null;
 
-  @SerializedName("details")
-  private String details = null;
+  public ProductTypeList productTypes(List<ProductType> productTypes) {
+    this.productTypes = productTypes;
+    return this;
+  }
 
-  public Error code(String code) {
-    this.code = code;
+  public ProductTypeList addProductTypesItem(ProductType productTypesItem) {
+    this.productTypes.add(productTypesItem);
     return this;
   }
 
    /**
-   * An error code that identifies the type of error that occurred.
-   * @return code
+   * Get productTypes
+   * @return productTypes
   **/
-  @ApiModelProperty(required = true, value = "An error code that identifies the type of error that occurred.")
-  public String getCode() {
-    return code;
+  @ApiModelProperty(required = true, value = "")
+  public List<ProductType> getProductTypes() {
+    return productTypes;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setProductTypes(List<ProductType> productTypes) {
+    this.productTypes = productTypes;
   }
 
-  public Error message(String message) {
-    this.message = message;
+  public ProductTypeList productTypeVersion(String productTypeVersion) {
+    this.productTypeVersion = productTypeVersion;
     return this;
   }
 
    /**
-   * A message that describes the error condition.
-   * @return message
+   * Amazon product type version identifier.
+   * @return productTypeVersion
   **/
-  @ApiModelProperty(required = true, value = "A message that describes the error condition.")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(required = true, value = "Amazon product type version identifier.")
+  public String getProductTypeVersion() {
+    return productTypeVersion;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public Error details(String details) {
-    this.details = details;
-    return this;
-  }
-
-   /**
-   * Additional details that can help the caller understand or fix the issue.
-   * @return details
-  **/
-  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
-  public String getDetails() {
-    return details;
-  }
-
-  public void setDetails(String details) {
-    this.details = details;
+  public void setProductTypeVersion(String productTypeVersion) {
+    this.productTypeVersion = productTypeVersion;
   }
 
 
@@ -102,26 +89,24 @@ public class Error {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.code, error.code) &&
-        Objects.equals(this.message, error.message) &&
-        Objects.equals(this.details, error.details);
+    ProductTypeList productTypeList = (ProductTypeList) o;
+    return Objects.equals(this.productTypes, productTypeList.productTypes) &&
+        Objects.equals(this.productTypeVersion, productTypeList.productTypeVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, details);
+    return Objects.hash(productTypes, productTypeVersion);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class ProductTypeList {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    productTypes: ").append(toIndentedString(productTypes)).append("\n");
+    sb.append("    productTypeVersion: ").append(toIndentedString(productTypeVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
