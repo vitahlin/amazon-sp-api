@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.vitahlin</groupId>
     <artifactId>amazon-sp-api</artifactId>
-    <version>0.0.1-beta</version>
+    <version>1.0.0</version>
     <name>amazon-sp-api</name>
-    <description>amazon-sp-api sdk</description>
+    <description>Java SDK for amazon sp-api</description>
     <url>https://github.com/vitahlin/amazon-sp-api</url>
 
     <licenses>
@@ -31,12 +31,8 @@
     </scm>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-
 
     <dependencies>
         <dependency>
@@ -172,7 +168,7 @@
                 <configuration>
                     <publishingServerId>central</publishingServerId>
                     <checksums>required</checksums>
-                    <deploymentName>amazon-sp-api-0.1</deploymentName>
+                    <deploymentName>amazon-sp-api-1.0.0</deploymentName>
                 </configuration>
             </plugin>
             <!-- 必须使用GPG签名 -->
