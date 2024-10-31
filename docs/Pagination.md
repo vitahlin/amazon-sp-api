@@ -4,7 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nextToken** | **String** | When present, pass this string token in the next request to return the next response page. |  [optional]
+**nextToken** | **String** | A token that can be used to fetch the next page. |  [optional]
+**previousToken** | **String** | A token that can be used to fetch the previous page. |  [optional]
 
 
 

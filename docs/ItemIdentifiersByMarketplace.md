@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**marketplaceId** | **String** | Amazon marketplace identifier. | 
-**identifiers** | [**List&lt;ItemIdentifier&gt;**](ItemIdentifier.md) | Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace. | 
+**marketplaceId** | **String** | A marketplace identifier. Identifies the Amazon marketplace for the listings item. |  [optional]
+**asin** | **String** | Amazon Standard Identification Number (ASIN) of the listings item. |  [optional]
 
 
 
