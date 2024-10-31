@@ -33,5 +33,6 @@ build
 
 .idea/
 .DS_Store
+.swagger-codegen/
 
 SpApiTest.java
