@@ -22,41 +22,56 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
+import io.swagger.client.model.GetQueriesResponsePagination;
+import io.swagger.client.model.QueryList;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * The response for the &#x60;getQueries&#x60; operation.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "The response for the `getQueries` operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:47:47.974+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class GetQueriesResponse {
+  @SerializedName("queries")
+  private QueryList queries = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("pagination")
+  private GetQueriesResponsePagination pagination = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public GetQueriesResponse queries(QueryList queries) {
+    this.queries = queries;
     return this;
   }
 
    /**
-   * Error response returned when the request is unsuccessful.
-   * @return errors
+   * The Data Kiosk queries.
+   * @return queries
   **/
-  @ApiModelProperty(required = true, value = "Error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "The Data Kiosk queries.")
+  public QueryList getQueries() {
+    return queries;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setQueries(QueryList queries) {
+    this.queries = queries;
+  }
+
+  public GetQueriesResponse pagination(GetQueriesResponsePagination pagination) {
+    this.pagination = pagination;
+    return this;
+  }
+
+   /**
+   * Get pagination
+   * @return pagination
+  **/
+  @ApiModelProperty(value = "")
+  public GetQueriesResponsePagination getPagination() {
+    return pagination;
+  }
+
+  public void setPagination(GetQueriesResponsePagination pagination) {
+    this.pagination = pagination;
   }
 
 
@@ -68,22 +83,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    GetQueriesResponse getQueriesResponse = (GetQueriesResponse) o;
+    return Objects.equals(this.queries, getQueriesResponse.queries) &&
+        Objects.equals(this.pagination, getQueriesResponse.pagination);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(queries, pagination);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class GetQueriesResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    queries: ").append(toIndentedString(queries)).append("\n");
+    sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
     sb.append("}");
     return sb.toString();
   }

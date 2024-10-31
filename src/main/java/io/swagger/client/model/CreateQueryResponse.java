@@ -22,41 +22,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * The response for the &#x60;createQuery&#x60; operation.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "The response for the `createQuery` operation.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:47:47.974+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class CreateQueryResponse {
+  @SerializedName("queryId")
+  private String queryId = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public CreateQueryResponse queryId(String queryId) {
+    this.queryId = queryId;
     return this;
   }
 
    /**
-   * Error response returned when the request is unsuccessful.
-   * @return errors
+   * The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
+   * @return queryId
   **/
-  @ApiModelProperty(required = true, value = "Error response returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "The identifier for the query. This identifier is unique only in combination with a selling partner account ID.")
+  public String getQueryId() {
+    return queryId;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setQueryId(String queryId) {
+    this.queryId = queryId;
   }
 
 
@@ -68,22 +60,22 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    CreateQueryResponse createQueryResponse = (CreateQueryResponse) o;
+    return Objects.equals(this.queryId, createQueryResponse.queryId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(queryId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class CreateQueryResponse {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    queryId: ").append(toIndentedString(queryId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
