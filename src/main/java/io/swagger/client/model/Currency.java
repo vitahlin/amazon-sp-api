@@ -22,41 +22,55 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * A currency type and amount.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "A currency type and amount.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:54:45.982+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class Currency {
+  @SerializedName("currencyCode")
+  private String currencyCode = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("currencyAmount")
+  private BigDecimal currencyAmount = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public Currency currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
     return this;
   }
 
    /**
-   * The error responses that are returned when the request is unsuccessful.
-   * @return errors
+   * The three-digit currency code in ISO 4217 format.
+   * @return currencyCode
   **/
-  @ApiModelProperty(required = true, value = "The error responses that are returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "The three-digit currency code in ISO 4217 format.")
+  public String getCurrencyCode() {
+    return currencyCode;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public Currency currencyAmount(BigDecimal currencyAmount) {
+    this.currencyAmount = currencyAmount;
+    return this;
+  }
+
+   /**
+   * The monetary value.
+   * @return currencyAmount
+  **/
+  @ApiModelProperty(value = "The monetary value.")
+  public BigDecimal getCurrencyAmount() {
+    return currencyAmount;
+  }
+
+  public void setCurrencyAmount(BigDecimal currencyAmount) {
+    this.currencyAmount = currencyAmount;
   }
 
 
@@ -68,22 +82,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    Currency currency = (Currency) o;
+    return Objects.equals(this.currencyCode, currency.currencyCode) &&
+        Objects.equals(this.currencyAmount, currency.currencyAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(currencyCode, currencyAmount);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class Currency {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    currencyAmount: ").append(toIndentedString(currencyAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

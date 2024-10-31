@@ -15,50 +15,17 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
-import java.io.IOException;
+import io.swagger.client.model.Breakdown;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * A list of breakdowns that provide details on how the total amount is calculated for the transaction.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "A list of breakdowns that provide details on how the total amount is calculated for the transaction.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:54:45.982+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
-
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
-    return this;
-  }
-
-   /**
-   * The error responses that are returned when the request is unsuccessful.
-   * @return errors
-  **/
-  @ApiModelProperty(required = true, value = "The error responses that are returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
-  }
-
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
-  }
-
+public class Breakdowns extends ArrayList<Breakdown> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,22 +35,20 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(super.hashCode());
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
-    
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("class Breakdowns {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

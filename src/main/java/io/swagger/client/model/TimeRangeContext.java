@@ -22,41 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Error;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of error responses returned when a request is unsuccessful.
+ * Additional information that is related to the time range of the transaction.
  */
-@ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
+@ApiModel(description = "Additional information that is related to the time range of the transaction.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:54:45.982+08:00")
-public class ErrorList {
-  @SerializedName("errors")
-  private List<Error> errors = new ArrayList<Error>();
+public class TimeRangeContext {
+  @SerializedName("startTime")
+  private String startTime = null;
 
-  public ErrorList errors(List<Error> errors) {
-    this.errors = errors;
-    return this;
-  }
+  @SerializedName("endTime")
+  private String endTime = null;
 
-  public ErrorList addErrorsItem(Error errorsItem) {
-    this.errors.add(errorsItem);
+  public TimeRangeContext startTime(String startTime) {
+    this.startTime = startTime;
     return this;
   }
 
    /**
-   * The error responses that are returned when the request is unsuccessful.
-   * @return errors
+   * The start time of the transaction.
+   * @return startTime
   **/
-  @ApiModelProperty(required = true, value = "The error responses that are returned when the request is unsuccessful.")
-  public List<Error> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "The start time of the transaction.")
+  public String getStartTime() {
+    return startTime;
   }
 
-  public void setErrors(List<Error> errors) {
-    this.errors = errors;
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
+  }
+
+  public TimeRangeContext endTime(String endTime) {
+    this.endTime = endTime;
+    return this;
+  }
+
+   /**
+   * The end time of the transaction.
+   * @return endTime
+  **/
+  @ApiModelProperty(value = "The end time of the transaction.")
+  public String getEndTime() {
+    return endTime;
+  }
+
+  public void setEndTime(String endTime) {
+    this.endTime = endTime;
   }
 
 
@@ -68,22 +81,24 @@ public class ErrorList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorList errorList = (ErrorList) o;
-    return Objects.equals(this.errors, errorList.errors);
+    TimeRangeContext timeRangeContext = (TimeRangeContext) o;
+    return Objects.equals(this.startTime, timeRangeContext.startTime) &&
+        Objects.equals(this.endTime, timeRangeContext.endTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(startTime, endTime);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorList {\n");
+    sb.append("class TimeRangeContext {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
