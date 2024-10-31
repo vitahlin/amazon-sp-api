@@ -30,7 +30,7 @@ import java.util.List;
  * The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.
  */
 @ApiModel(description = "The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T19:50:36.090+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:58:06.653+08:00")
 public class ItemEligibilityPreview {
   @SerializedName("asin")
   private String asin = null;
