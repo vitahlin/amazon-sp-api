@@ -4,11 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** | A description of the items in a transaction. |  [optional]
-**relatedIdentifiers** | [**ItemRelatedIdentifiers**](ItemRelatedIdentifiers.md) | Related business identifiers of the item. |  [optional]
-**totalAmount** | [**Currency**](Currency.md) | The total monetary amount of the item. |  [optional]
-**breakdowns** | [**Breakdowns**](Breakdowns.md) | A list of breakdowns that provide details on how the total amount is calculated for the transaction. |  [optional]
-**contexts** | [**Contexts**](Contexts.md) | Additional Information about the item. |  [optional]
+**asin** | **String** | The Amazon Standard Identification Number (ASIN) of the item. | 
+**expiration** | **String** | The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern&#x60;YYYY-MM-DD&#x60;. The same MSKU with different expiration dates cannot go into the same box. |  [optional]
+**fnsku** | **String** | A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center. | 
+**labelOwner** | **String** | Specifies who will label the items. Options include &#x60;AMAZON&#x60;, &#x60;SELLER&#x60;, and &#x60;NONE&#x60;. | 
+**manufacturingLotCode** | **String** | The manufacturing lot code. |  [optional]
+**msku** | **String** | The merchant SKU, a merchant-supplied identifier of a specific SKU. | 
+**prepInstructions** | [**List&lt;PrepInstruction&gt;**](PrepInstruction.md) | Special preparations that are required for an item. | 
+**quantity** | **Integer** | The number of the specified MSKU. | 
 
 
 

@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**unit** | [**UnitOfWeight**](UnitOfWeight.md) |  |  [optional]
+**unit** | [**UnitOfWeight**](UnitOfWeight.md) |  | 
+**value** | [**BigDecimal**](BigDecimal.md) | Value of a weight. | 
 
 
 
