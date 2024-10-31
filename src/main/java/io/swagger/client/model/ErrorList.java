@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Messaging
- * With the Messaging API you can build applications that send messages to buyers. You can get a list of message types that are available for an order that you specify, then call an operation that sends a message to the buyer for that order. The Messaging API returns responses that are formed according to the <a href=https://tools.ietf.org/html/draft-kelly-json-hal-08>JSON Hypertext Application Language</a> (HAL) standard.
+ * Selling Partner API for Notifications
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * OpenAPI spec version: v1
  * 
@@ -24,7 +24,7 @@ import java.util.List;
  * A list of error responses returned when a request is unsuccessful.
  */
 @ApiModel(description = "A list of error responses returned when a request is unsuccessful.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:05:26.886+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:06:38.157+08:00")
 public class ErrorList extends ArrayList<Error> {
 
   @Override
