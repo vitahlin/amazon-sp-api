@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Sellers
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * Selling Partner API for Services
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * OpenAPI spec version: v1
  * 
@@ -28,7 +28,7 @@ import java.io.IOException;
  * Error response returned when the request is unsuccessful.
  */
 @ApiModel(description = "Error response returned when the request is unsuccessful.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:16:19.109+08:00")
 public class Error {
   @SerializedName("code")
   private String code = null;
@@ -38,6 +38,56 @@ public class Error {
 
   @SerializedName("details")
   private String details = null;
+
+  /**
+   * The type of error.
+   */
+  @JsonAdapter(ErrorLevelEnum.Adapter.class)
+  public enum ErrorLevelEnum {
+    ERROR("ERROR"),
+    
+    WARNING("WARNING");
+
+    private String value;
+
+    ErrorLevelEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ErrorLevelEnum fromValue(String text) {
+      for (ErrorLevelEnum b : ErrorLevelEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ErrorLevelEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ErrorLevelEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ErrorLevelEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ErrorLevelEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("errorLevel")
+  private ErrorLevelEnum errorLevel = null;
 
   public Error code(String code) {
     this.code = code;
@@ -81,16 +131,34 @@ public class Error {
   }
 
    /**
-   * Additional details that can help you understand or fix the issue.
+   * Additional details that can help the caller understand or fix the issue.
    * @return details
   **/
-  @ApiModelProperty(value = "Additional details that can help you understand or fix the issue.")
+  @ApiModelProperty(value = "Additional details that can help the caller understand or fix the issue.")
   public String getDetails() {
     return details;
   }
 
   public void setDetails(String details) {
     this.details = details;
+  }
+
+  public Error errorLevel(ErrorLevelEnum errorLevel) {
+    this.errorLevel = errorLevel;
+    return this;
+  }
+
+   /**
+   * The type of error.
+   * @return errorLevel
+  **/
+  @ApiModelProperty(value = "The type of error.")
+  public ErrorLevelEnum getErrorLevel() {
+    return errorLevel;
+  }
+
+  public void setErrorLevel(ErrorLevelEnum errorLevel) {
+    this.errorLevel = errorLevel;
   }
 
 
@@ -105,12 +173,13 @@ public class Error {
     Error error = (Error) o;
     return Objects.equals(this.code, error.code) &&
         Objects.equals(this.message, error.message) &&
-        Objects.equals(this.details, error.details);
+        Objects.equals(this.details, error.details) &&
+        Objects.equals(this.errorLevel, error.errorLevel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, details);
+    return Objects.hash(code, message, details, errorLevel);
   }
 
 
@@ -122,6 +191,7 @@ public class Error {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    errorLevel: ").append(toIndentedString(errorLevel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

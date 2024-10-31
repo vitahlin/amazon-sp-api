@@ -1,6 +1,6 @@
 /*
- * Selling Partner API for Sellers
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * Selling Partner API for Services
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * OpenAPI spec version: v1
  * 
@@ -25,28 +25,61 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Represents an address
+ * The shipping address for the service job.
  */
-@ApiModel(description = "Represents an address")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:15:42.502+08:00")
+@ApiModel(description = "The shipping address for the service job.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-10-31T20:16:19.109+08:00")
 public class Address {
+  @SerializedName("name")
+  private String name = null;
+
   @SerializedName("addressLine1")
   private String addressLine1 = null;
 
   @SerializedName("addressLine2")
   private String addressLine2 = null;
 
-  @SerializedName("countryCode")
-  private String countryCode = null;
-
-  @SerializedName("stateOrProvinceCode")
-  private String stateOrProvinceCode = null;
+  @SerializedName("addressLine3")
+  private String addressLine3 = null;
 
   @SerializedName("city")
   private String city = null;
 
+  @SerializedName("county")
+  private String county = null;
+
+  @SerializedName("district")
+  private String district = null;
+
+  @SerializedName("stateOrRegion")
+  private String stateOrRegion = null;
+
   @SerializedName("postalCode")
   private String postalCode = null;
+
+  @SerializedName("countryCode")
+  private String countryCode = null;
+
+  @SerializedName("phone")
+  private String phone = null;
+
+  public Address name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * The name of the person, business, or institution.
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "The name of the person, business, or institution.")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   public Address addressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
@@ -54,10 +87,10 @@ public class Address {
   }
 
    /**
-   * Street address information.
+   * The first line of the address.
    * @return addressLine1
   **/
-  @ApiModelProperty(required = true, value = "Street address information.")
+  @ApiModelProperty(required = true, value = "The first line of the address.")
   public String getAddressLine1() {
     return addressLine1;
   }
@@ -72,10 +105,10 @@ public class Address {
   }
 
    /**
-   * Additional street address information.
+   * Additional address information, if required.
    * @return addressLine2
   **/
-  @ApiModelProperty(value = "Additional street address information.")
+  @ApiModelProperty(value = "Additional address information, if required.")
   public String getAddressLine2() {
     return addressLine2;
   }
@@ -84,40 +117,22 @@ public class Address {
     this.addressLine2 = addressLine2;
   }
 
-  public Address countryCode(String countryCode) {
-    this.countryCode = countryCode;
+  public Address addressLine3(String addressLine3) {
+    this.addressLine3 = addressLine3;
     return this;
   }
 
    /**
-   * The country code in two-character ISO 3166-1 alpha-2 format.
-   * @return countryCode
+   * Additional address information, if required.
+   * @return addressLine3
   **/
-  @ApiModelProperty(required = true, value = "The country code in two-character ISO 3166-1 alpha-2 format.")
-  public String getCountryCode() {
-    return countryCode;
+  @ApiModelProperty(value = "Additional address information, if required.")
+  public String getAddressLine3() {
+    return addressLine3;
   }
 
-  public void setCountryCode(String countryCode) {
-    this.countryCode = countryCode;
-  }
-
-  public Address stateOrProvinceCode(String stateOrProvinceCode) {
-    this.stateOrProvinceCode = stateOrProvinceCode;
-    return this;
-  }
-
-   /**
-   * The state or province code.
-   * @return stateOrProvinceCode
-  **/
-  @ApiModelProperty(value = "The state or province code.")
-  public String getStateOrProvinceCode() {
-    return stateOrProvinceCode;
-  }
-
-  public void setStateOrProvinceCode(String stateOrProvinceCode) {
-    this.stateOrProvinceCode = stateOrProvinceCode;
+  public void setAddressLine3(String addressLine3) {
+    this.addressLine3 = addressLine3;
   }
 
   public Address city(String city) {
@@ -138,22 +153,112 @@ public class Address {
     this.city = city;
   }
 
+  public Address county(String county) {
+    this.county = county;
+    return this;
+  }
+
+   /**
+   * The county.
+   * @return county
+  **/
+  @ApiModelProperty(value = "The county.")
+  public String getCounty() {
+    return county;
+  }
+
+  public void setCounty(String county) {
+    this.county = county;
+  }
+
+  public Address district(String district) {
+    this.district = district;
+    return this;
+  }
+
+   /**
+   * The district.
+   * @return district
+  **/
+  @ApiModelProperty(value = "The district.")
+  public String getDistrict() {
+    return district;
+  }
+
+  public void setDistrict(String district) {
+    this.district = district;
+  }
+
+  public Address stateOrRegion(String stateOrRegion) {
+    this.stateOrRegion = stateOrRegion;
+    return this;
+  }
+
+   /**
+   * The state or region.
+   * @return stateOrRegion
+  **/
+  @ApiModelProperty(value = "The state or region.")
+  public String getStateOrRegion() {
+    return stateOrRegion;
+  }
+
+  public void setStateOrRegion(String stateOrRegion) {
+    this.stateOrRegion = stateOrRegion;
+  }
+
   public Address postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
    /**
-   * The postal code.
+   * The postal code. This can contain letters, digits, spaces, and/or punctuation.
    * @return postalCode
   **/
-  @ApiModelProperty(value = "The postal code.")
+  @ApiModelProperty(value = "The postal code. This can contain letters, digits, spaces, and/or punctuation.")
   public String getPostalCode() {
     return postalCode;
   }
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
+  }
+
+  public Address countryCode(String countryCode) {
+    this.countryCode = countryCode;
+    return this;
+  }
+
+   /**
+   * The two digit country code, in ISO 3166-1 alpha-2 format.
+   * @return countryCode
+  **/
+  @ApiModelProperty(value = "The two digit country code, in ISO 3166-1 alpha-2 format.")
+  public String getCountryCode() {
+    return countryCode;
+  }
+
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
+  }
+
+  public Address phone(String phone) {
+    this.phone = phone;
+    return this;
+  }
+
+   /**
+   * The phone number.
+   * @return phone
+  **/
+  @ApiModelProperty(value = "The phone number.")
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
 
@@ -166,17 +271,22 @@ public class Address {
       return false;
     }
     Address address = (Address) o;
-    return Objects.equals(this.addressLine1, address.addressLine1) &&
+    return Objects.equals(this.name, address.name) &&
+        Objects.equals(this.addressLine1, address.addressLine1) &&
         Objects.equals(this.addressLine2, address.addressLine2) &&
-        Objects.equals(this.countryCode, address.countryCode) &&
-        Objects.equals(this.stateOrProvinceCode, address.stateOrProvinceCode) &&
+        Objects.equals(this.addressLine3, address.addressLine3) &&
         Objects.equals(this.city, address.city) &&
-        Objects.equals(this.postalCode, address.postalCode);
+        Objects.equals(this.county, address.county) &&
+        Objects.equals(this.district, address.district) &&
+        Objects.equals(this.stateOrRegion, address.stateOrRegion) &&
+        Objects.equals(this.postalCode, address.postalCode) &&
+        Objects.equals(this.countryCode, address.countryCode) &&
+        Objects.equals(this.phone, address.phone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(addressLine1, addressLine2, countryCode, stateOrProvinceCode, city, postalCode);
+    return Objects.hash(name, addressLine1, addressLine2, addressLine3, city, county, district, stateOrRegion, postalCode, countryCode, phone);
   }
 
 
@@ -185,12 +295,17 @@ public class Address {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    stateOrProvinceCode: ").append(toIndentedString(stateOrProvinceCode)).append("\n");
+    sb.append("    addressLine3: ").append(toIndentedString(addressLine3)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
+    sb.append("    district: ").append(toIndentedString(district)).append("\n");
+    sb.append("    stateOrRegion: ").append(toIndentedString(stateOrRegion)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
